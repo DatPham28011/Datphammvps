@@ -1,327 +1,142 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hệ thống Trend Following - VPS</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Tuyển Dụng Broker Chứng Khoán</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
             font-family: 'Roboto', sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
             margin: 0;
             padding: 0;
-            background-color: #f3f6f9;
-            color: #333;
         }
-        header {
-            background: linear-gradient(to right, #004080, #007bff);
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-            padding: 0 20px;
-        }
-        header h1 {
-            font-size: 36px;
-            margin-bottom: 10px;
-        }
+
         .container {
-            max-width: 1100px;
-            margin: -60px auto 40px;
-            padding: 40px;
+            max-width: 900px;
+            margin: 40px auto;
             background-color: #fff;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         }
-        h2 {
-            color: #0056b3;
-            margin: 40px 0 20px;
-            border-left: 4px solid #007bff;
-            padding-left: 12px;
+
+        h1 {
+            color: #003366;
+            text-align: center;
+            margin-bottom: 30px;
         }
-        h3 {
-            margin: 30px 0 15px;
-            color: #333;
-        }
-        ul {
-            line-height: 1.7;
-            margin-left: 20px;
-        }
-        .highlight {
-            font-weight: bold;
-            color: #007b00;
-        }
-        img.chart-img {
-            display: block;
-            margin: 20px auto;
-            max-width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        img.chart-img:hover {
-            transform: scale(1.02);
-        }
-        .intro-section {
-            margin-bottom: 40px;
-        }
-        .intro-section h2 {
-            font-size: 24px;
-            color: #222;
-            margin-bottom: 10px;
-        }
-        .intro-section p {
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 6px;
-        }
+
         .section {
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
-        footer {
-            background-color: #f8f9fb;
-            color: #333;
-            text-align: left;
-            padding: 40px 10%;
-            font-size: 14px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            justify-content: space-between;
-            border-top: 1px solid #ccc;
+
+        .section h2 {
+            color: #0055a5;
+            font-size: 20px;
+            margin-bottom: 10px;
+            border-left: 4px solid #0055a5;
+            padding-left: 10px;
         }
-        .footer-col {
-            flex: 1;
-            min-width: 200px;
+
+        ul {
+            padding-left: 20px;
         }
-        .footer-col h4 {
-            color: #002b5e;
-            margin-bottom: 12px;
+
+        .apply-btn {
+            display: block;
+            text-align: center;
+            margin-top: 40px;
         }
-        .footer-col ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .footer-col ul li {
-            margin-bottom: 6px;
-        }
-        .footer-col ul li a {
-            text-decoration: none;
-            color: #333;
-            transition: color 0.3s;
-        }
-        .footer-col ul li a:hover {
-            color: #007bff;
-        }
-        .social-icons {
-            display: flex;
-            gap: 10px;
-            margin-top: 10px;
-        }
-        .social-icons a {
-            text-decoration: none;
+
+        .apply-btn a {
+            background-color: #0055a5;
             color: white;
-            padding: 8px;
-            border-radius: 50%;
-            display: inline-block;
-            transition: transform 0.3s;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
         }
-        .social-icons a:hover {
-            transform: scale(1.1);
+
+        .apply-btn a:hover {
+            background-color: #003f7f;
         }
-        .facebook { background: #3b5998; }
-        .twitter { background: #1da1f2; }
-        .youtube { background: #ff0000; }
-        @media (max-width: 768px) {
-            .container { margin-top: 0; padding: 20px; }
-            header { height: 200px; }
-            header h1 { font-size: 28px; }
-            .footer-col { flex-basis: 100%; }
+
+        .footer {
+            text-align: center;
+            font-size: 14px;
+            color: #777;
+            margin-top: 40px;
         }
     </style>
 </head>
 <body>
-
-<header>
-    <div>
-        <h1>HỆ THỐNG TREND FOLLOWING</h1>
-        <p>Chiến lược giao dịch theo xu hướng từ Công ty chứng khoán VPS</p>
-    </div>
-</header>
-
 <div class="container">
-    <div class="intro-section">
-        <h2><strong>CHIẾN LƯỢC GIAO DỊCH</strong></h2>
-        <p>Kinh Doanh Đầu Tư (KĐĐT) tập trung vào giai đoạn tăng trưởng giá mạnh nhất của cổ phiếu</p>
-        <p>với mục tiêu tạo ra Hiệu suất lớn trong thời gian ngắn nhất (Thường 3 – 6 tháng)</p>
-        <p>Phương pháp lựa chọn thời điểm và cổ phiếu của KĐĐT dựa trên nguyên tắc 78-22</p>
-        <p>Tức 78% lợi nhuận của một cổ phiếu sẽ tập trung được tạo ra trong khoảng 22% tổng thời gian biến động</p>
-        <p><em>Ví dụ:</em></p>
+    <h1>TUYỂN DỤNG BROKER CHỨNG KHOÁN 2025</h1>
+
+    <div class="section">
+        <h2>📍 Vị trí: Chuyên viên Tư vấn Đầu tư (Broker)</h2>
+        <p>Làm việc tại: Sao Biển 01-26
+            Vinhomes Ocean Park, Dương Xá, Gia Lâm, Hà Nội</p>
     </div>
 
     <div class="section">
-        <h2>Giới thiệu</h2>
+        <h2>💼 CỘNG TÁC VIÊN CHỨNG KHOÁN VPS</h2>
         <ul>
-            <li>78% lợi nhuận đến từ khoảng 22% thời gian cổ phiếu tăng mạnh nhất.</li>
-            <li>Ví dụ minh họa từ thực tế: <strong>Cổ phiếu HPG</strong></li>
-        </ul>
-        <img src="https://n18.vn/wp-content/uploads/2025/01/image-1320x378.png" alt="Cổ phiếu HPG" class="chart-img" onerror="this.src='https://via.placeholder.com/1320x378?text=Cổ+phiếu+HPG';">
-        <p><strong>NĐT có thể thấy:</strong></p>
-        <ul>
-            <li>1 chu kỳ vận động của cổ phiếu Tích lũy => Tăng giá => Phân phối => Giảm giá.</li>
-            <li>Tổng mất: 1742 ngày.</li>
-            <li>Số ngày tăng giá: 464 ngày ~ 26% tổng thời gian vận động của cổ phiếu.</li>
-            <li>=> 74% số thời gian còn lại được coi là bẫy, khi sự vận động của cổ phiếu trong giai đoạn này rất khó để sinh ra lợi nhuận.</li>
-        </ul>
-        <p><strong>Phân tích kỹ thuật:</strong></p>
-        <ul>
-            <li>Qua kiểm chứng thực tế, trong vòng 9/10 lần chọn đúng thời điểm trong chu kỳ sẽ sinh ra lợi nhuận.</li>
-            <li>Trong 9/10 lần chọn đúng cổ phiếu sẽ sinh ra lợi nhuận trong 25% thời gian vận động của cổ phiếu.</li>
-        </ul>
-        <p><strong>Chiến lược KĐĐT đạt được kết quả tốt nhờ:</strong></p>
-        <ul>
-            <li>Điểm Break tạo đà tăng giá mạnh.</li>
-            <li>Điểm Back Test kiểm tra độ bền xu hướng.</li>
-        </ul>
-        <p><strong>Phương pháp Trend Following:</strong></p>
-        <ul>
-            <li>1 - Chọn cổ phiếu tiềm năng.</li>
-            <li>2 - Chọn thời điểm tham gia để tối ưu hóa QTRR.</li>
-            <li>3 - Các bước thực hiện: Chọn cổ phiếu, xác định thời điểm, quản trị rủi ro.</li>
+            <li>Những ai thích hợp làm “Cộng Tác Viên” chứng khoán tại VPS:.</li>
+            <li>Là “Nhà Đầu Tư Chuyên Nghiệp” có định hướng phát triển quy mô lớn trên TTCK | Cộng Tác Viên Cấp 1.</li>
+            <li>Là những cá nhân trẻ, có định hướng phát triển sự nghiệp gắn với TTCK.</li>
+            <li>Làm nghề kết hợp tự doanh là một trong những chiến lược đem lại kết quả tốt nhất hiện nay | Cộng Tác Viên Cấp 2.</li>
         </ul>
     </div>
 
     <div class="section">
-        <h2>Bộ lọc cổ phiếu tiềm năng</h2>
+        <h2> Đến với chương trình Cộng Tác Viên của chúng tôi bạn sẽ được:</h2>
         <ul>
-            <li>Nền tích lũy lớn</li>
-            <li>Động lực tăng trưởng mạnh</li>
-            <li>Giá vừa tích lũy dài</li>
-            <li>Có back test nền tích lũy</li>
-            <li>Break nền rõ nét</li>
+            <li>Nâng cao năng lực đầu tư nhờ các buổi trao đổi, chia sẻ thường xuyên cùng các NĐT có mức nav lớn và thành công của Team. .</li>
+            <li>Một lộ trình chi tiết từng bước đắt giá được đúc kết từ các lão làng, những người không chỉ phát triển nhanh mạnh mà còn hết sức chắc chắn của phòng.</li>
+            <li>Được làm việc trong một môi trường chuyên nghiệp năng động.</li>
+            <li>Cơ hội thăng tiến rõ ràng theo năng lực.</li>
+        </ul>
+    </div>
+    <img src="Tuyendung-CTV.png" alt="KDĐT Logo" style="width: 500px">
+    <img src="Tuyendung2-CTV.png" alt="KDĐT Logo" style="width: 500px">
+
+    <div class="section">
+        <h2>🎯 Yêu cầu công việc </h2>
+        <ul>
+            <li>Cộng Tác Viên Cấp 1:</li>
+            <li>Là NĐT chứng khoán chuyên nghiệp theo Luật Chứng Khoán 2019.</li>
+            <li>Có hiệu suất đầu tư trung bình > 10% trong 3 năm gần nhất.</li>
         </ul>
     </div>
     <div class="section">
-        <p><strong>Thời điểm tham gia tối ưu:</strong></p>
         <ul>
-            <li>1-Break nền tảng lớn</li>
-            <li>2-Back test nền tảng lớn</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>Ví dụ cổ phiếu điển hình</h2>
-        <img src="https://n18.vn/wp-content/uploads/2025/01/image-1-1320x504.png" alt="Cổ phiếu VHC" class="chart-img">
-        <p class="text-center">Tăng trưởng +500% với chiến lược Trend Following</p>
-
-
-        <img src="https://n18.vn/wp-content/uploads/2025/01/image-2-1320x525.png" alt="Cổ phiếu DXG" class="chart-img">
-        <p class="text-center">Điểm Break và Back Test rõ ràng</p>
-    </div>
-
-    <img src="https://n18.vn/wp-content/uploads/2025/01/image-3-1320x509.png" alt="Cổ phiếu CEO" class="chart-img">
-
-
-    <div class="section">
-        <h2>Phương án nắm giữ</h2>
-        <ul>
-            <li>Sử dụng xu hướng kết hợp kênh xu hướng</li>
-            <li>Sử dụng nền tích lũy</li>
+            <li>Cộng Tác Viên Cấp 2:</li>
+            <li>Bằng đại học các khối Kinh Tế.</li>
+            <li>Có chứng chỉ CFA1-2-3 là một lợi thế.</li>
+            <li>Làm việc Offline tại Vinhomes Ocean Park</li>
+            <li>Đã có trải nghiệm đầu tư trên TTCK tối thiểu 6 tháng.</li>
         </ul>
     </div>
 
     <div class="section">
-        <h2>Phương án quản trị rủi ro (QTRR)</h2>
-        <ul>
-            <li>Mua vì lý do rõ ràng</li>
-            <li>Tăng điểm bán theo chiều tăng giá cổ phiếu</li>
-            <li>Giới hạn thua lỗ mỗi lệnh dưới 10%</li>
-            <li>Luôn đặt QTRR lên hàng đầu</li>
-            <li>Đối với KDĐT việc quản trị rủi ro luôn được đặt lên hàng đầu.<br>
-                Muốn vào top 10% chiến thắng → NĐT cần sống đủ lâu trên thị trường<br>
-                NĐT muốn sống lâu → Bắt buộc cần học cách QTRR để luôn luôn có đủ vốn khi thị trường có sóng tăng ập tới</li>
-        </ul>
+        <h2>Cách ứng tuyển</h2>
+        <p>Gửi CV về email: <strong>Phamdat28011997@gmail.com.vn</strong></p>
+        <p>Liên hệ qua SĐT: <strong>0965366067</strong></p>
+        <p>Tiêu đề: <em>[Ứng tuyển Broker] – Họ và tên</em></p>
+    </div>
+
+    <div class="apply-btn">
+        <a href="https://zalo.me/g/hafame574">THAM GIA NHÓM</a>
+    </div>
+
+    <div class="footer">
+        © 2025 Công ty Chứng khoán VPS. Mọi quyền được bảo lưu.
     </div>
 </div>
-
-<footer>
-    <div class="footer-col">
-        <img src="logo-footer.png" alt="KDĐT Logo" style="width: 200px">
-        <h4>CÔNG TY CỔ PHẦN CHỨNG KHOÁN VPS</h4>
-        <p>Trụ sở: Sao Biển 01-26, Vinhomes Ocean Park, Dương Xá, Gia Lâm, Hà Nội</p>
-        <p>Email: <strong>phamdat28011997@gmail.com</strong></p>
-        <p>Hotline: 0965366067</p>
-        <p>Kênh hỗ trợ khách hàng: <a href="#">Chat với chúng tôi</a></p>
-    </div>
-
-    <div class="footer-col">
-        <h4>Dịch vụ KDĐT</h4>
-        <ul>
-            <li>Tài chính</li>
-            <li><a href="#">Hệ thống Trend Following</a></li>
-            <li><a href="#">Tư vấn tài chính cá nhân trọn gói</a></li>
-            <li><a href="#">Tư vấn tài chính cá nhân theo nhu cầu</a></li>
-        </ul>
-        <h4>Đào tạo</h4>
-        <ul>
-            <li><a href="#">Tài chính cá nhân toàn diện</a></li>
-            <li><a href="#">Đầu tư chứng khoán chuyên nghiệp</a></li>
-            <li><a href="#">360 độ về tiền</a></li>
-            <li><a href="#">Tài chính cá nhân cơ bản</a></li>
-        </ul>
-    </div>
-
-    <div class="footer-col">
-        <h4>Chính sách</h4>
-        <ul>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Chính sách bảo mật</a></li>
-        </ul>
-        <h4>Về KDĐT</h4>
-        <ul>
-            <li><a href="#">Về chúng tôi</a></li>
-            <li><a href="#">Đối tác kinh doanh</a></li>
-            <li><a href="#">Tin tức</a></li>
-            <li><a href="#">Tuyển dụng</a></li>
-        </ul>
-    </div>
-
-    <div class="footer-col">
-        <h4>Theo dõi chúng tôi tại</h4>
-        <div class="social-icons">
-            <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="youtube"><i class="fab fa-youtube"></i></a>
-        </div>
-        <p>© 2025 Công ty cổ phẩn chứng khoán VPS. All rights reserved.</p>
-    </div>
-</footer>
-
-<script>
-    // Thêm hiệu ứng scroll mượt
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-
-    // Xử lý lỗi hình ảnh
-    document.addEventListener('DOMContentLoaded', function() {
-        const images = document.querySelectorAll('img');
-        images.forEach(img => {
-            img.onerror = function() {
-                this.src = 'https://via.placeholder.com/' + this.width + 'x' + this.height + '?text=Hình+ảnh+không+tải+được';
-            };
-        });
-    });
-</script>
-
 </body>
 </html>
